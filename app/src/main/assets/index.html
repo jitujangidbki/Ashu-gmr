@@ -1501,23 +1501,31 @@
 
         // LIVE CHAT SIMULATOR TIMERS
         const chatBox = document.getElementById('simulated-chat-box');
-        const userPool = ['Jitendra', 'ProFFPlayer', 'StarBoyFF', 'BRWN_King', 'AshuLover', 'CombatNoob', 'IndiaGamer'];
-        const messagePool = [
-            'Bhai next lobby stream kab hai? 🔥',
-            'Subscribers counter is massive, op!',
-            'BRWN AKAZA is absolutely unstoppable grandmaster player',
-            'I passed my 1v3 combat trial yesterday, let’s go!',
-            'Master ranking pushes are clean here.',
-            'Support from Gujarat region, legendary owner!',
-            'Ashu bhai custom custom rooms build karo jaldi!'
+        const chatMessages = [
+            { user: '亗 ᗷᖇᗯᑎ×ᴍᴀғɪʏᴀ 亗', msg: 'Brownies Guild is on top! Respect to all members! 👑🔥' },
+            { user: '⭐ ᴀᴀsɪʏᴀ !! ⭐', msg: "Welcome to Brownies! Keep pushing ranks guys, let's dominate India server! 💥" },
+            { user: '亗 ᗷᖇᗯᑎ ᒪᑌᖴᖴY 亗', msg: 'Supervised trials are live now. Apply in recruitment area! ⚔️🎮' },
+            { user: '꧁༒Ǥ₳₦Ǥᔕ₮ᗴᖇ༒꧂', msg: 'Bhai next lobby stream kab hai? 🔥' },
+            { user: '亗 B R O K E N 亗', msg: 'Subscribers counter is massive, op!' },
+            { user: '〆S H I E L D〆', msg: 'BRWN AKAZA is absolutely unstoppable grandmaster player' },
+            { user: '★彡[Gᴀᴍᴇʀ]彡★', msg: 'I passed my 1v3 combat trial yesterday, let’s go!' },
+            { user: '⚡ DARK_KILLER ⚡', msg: 'Master ranking pushes are clean here.' },
+            { user: '亗 MR_COBRA 亗', msg: 'Support from Gujarat region, legendary owner!' },
+            { user: '★☯️ IND_CRIMINAL ☯️★', msg: 'Ashu bhai custom custom rooms build karo jaldi!' },
+            { user: '꧁༒☬ᶜᴿᴬᶻᵞ☬༒꧂', msg: 'India top gameplay is here, no cap! 🇮🇳🔥' },
+            { user: '☯️ MAFIA_BOY ☯️', msg: 'Brownies Guild India server rank-1 setup in progress!' },
+            { user: '彡[Pʜᴏᴇɴɪx]彡', msg: '1v4 trial is extremely hard, but I will try again!' },
+            { user: '〆R O C K Y〆', msg: 'Ashu GMR is live streaming soon guys, stay active!' },
+            { user: '亗 ᗷᖇᗯᑎ×ᴍᴀғɪʏᴀ 亗', msg: 'Our coordination is unbeatable in custom rooms! ⚡⚔️' },
+            { user: '⭐ ᴀᴀsɪʏᴀ !! ⭐', msg: 'Make sure to download your Trial Passport below and check your calibration code! 🎯' },
+            { user: '亗 ᗷᖇᗯᑎ ᒪᑌᖴᖴY 亗', msg: 'If you want 1v3 or 1v4 test rules, ask in our official Discord.' }
         ];
 
         setInterval(() => {
             if(chatBox) {
-                const user = userPool[Math.floor(Math.random() * userPool.length)];
-                const msg = messagePool[Math.floor(Math.random() * messagePool.length)];
+                const messageObj = chatMessages[Math.floor(Math.random() * chatMessages.length)];
                 const element = document.createElement('div');
-                element.innerHTML = `<span class="text-neonCyan border-b border-dashed border-neonCyan/30 cursor-pointer">[${user}]</span> ${msg}`;
+                element.innerHTML = `<span class="text-neonCyan border-b border-dashed border-neonCyan/30 cursor-pointer">[${messageObj.user}]</span> ${messageObj.msg}`;
                 chatBox.appendChild(element);
                 chatBox.scrollTop = chatBox.scrollHeight;
                 if(chatBox.children.length > 30) {

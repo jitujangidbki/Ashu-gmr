@@ -1,0 +1,6 @@
+{
+  "name": "Ashu GMR x Brownies",
+  "description": "Official gaming portal and esports guild base of Ashu GMR and the Brownies Guild.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

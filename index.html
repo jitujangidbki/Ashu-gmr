@@ -1869,6 +1869,14 @@
 
         // SCREEN INITIALIZATION TRANSITION TIMER
         window.addEventListener('load', () => {
+            // Force initial scroll behavior reset
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+
             initYouTubeIntegration();
             const progress = document.getElementById('loader-progress');
             const status = document.getElementById('loader-status');
@@ -1892,6 +1900,10 @@
                     setTimeout(() => {
                         const loader = document.getElementById('loading-screen');
                         loader.style.opacity = '0';
+                        // Ensure page starts at the very top when visible
+                        window.scrollTo(0, 0);
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         setTimeout(() => {
                             loader.style.display = 'none';
                         }, 1000);
